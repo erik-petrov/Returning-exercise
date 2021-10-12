@@ -36,28 +36,36 @@ namespace hehehaha
         }
         private static void ex2()
         {
-            int[] arr = new int[5];
+            /*int[] arr = new int[5];
             for (int i = 0; i < 5; i++)
             {
                 Console.Write("Please enter a number: ");
                 int smt = Convert.ToInt32(Console.ReadLine());
                 arr[i] = smt;
             }
-            int sum = 0;
             int mult = 1;
             foreach (var item in arr)
             {
-                sum += item;
                 mult = item * mult;
             }
-            Console.WriteLine($"Nums AVG = {arr.Average()}\nNums SUM = {sum}\nNums multiplied = {mult}");
+            Console.WriteLine($"Nums AVG = {arr.Average()}\nNums SUM = {arr.Sum()}\nNums multiplied = {mult}");*/
+            int mult = 1;
+            int sum = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Please enter a number: ");
+                int smt = Convert.ToInt32(Console.ReadLine());
+                sum += smt;
+                mult = smt * mult;
+            }
+            Console.WriteLine($"Nums AVG = {sum / 5}\nNums SUM = {sum}\nNums multiplied = {mult}");
         }
         private static void ex3()
         {
-            string guess = "";
+            string guess;
             do
             {
-                Console.Write("SAY ELEPHANT: ");
+                Console.Write("SAY 'elephant': ");
                 guess = Console.ReadLine();
             } while (guess != "elephant");
             Console.WriteLine("thanks.");
@@ -79,6 +87,10 @@ namespace hehehaha
                 }
                 else { Console.WriteLine("No luck this time."); }
             }
+        }
+        private static void ex5()
+        {
+            //попросите пользователя ввести 4 числа и сделайте из него наиболее возможное число без встроенной сортировки
         }
     }
 }

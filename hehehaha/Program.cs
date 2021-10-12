@@ -8,6 +8,5 @@ namespace hehehaha
 {
     class Program
     {
-        
     }
 }
