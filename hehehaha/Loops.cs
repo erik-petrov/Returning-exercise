@@ -10,14 +10,16 @@ namespace hehehaha
     {
         static void Main()
         {
-            ex1();
-            ex2();
-            ex3();
-            ex4();
+            /*Ex1();
+            Ex2();
+            Ex3();
+            Ex4();
+            Ex5();*/
+            OwnEx();
             Console.ReadLine();
         }
 
-        private static void ex1()
+        private static void Ex1()
         {
             Random rnd = new Random();
             int n = rnd.Next(1, 50);
@@ -34,7 +36,7 @@ namespace hehehaha
                 Console.WriteLine(item*item);
             }
         }
-        private static void ex2()
+        private static void Ex2()
         {
             /*int[] arr = new int[5];
             for (int i = 0; i < 5; i++)
@@ -60,7 +62,7 @@ namespace hehehaha
             }
             Console.WriteLine($"Nums AVG = {sum / 5}\nNums SUM = {sum}\nNums multiplied = {mult}");
         }
-        private static void ex3()
+        private static void Ex3()
         {
             string guess;
             do
@@ -70,7 +72,7 @@ namespace hehehaha
             } while (guess != "elephant");
             Console.WriteLine("thanks.");
         }
-        private static void ex4()
+        private static void Ex4()
         {
             Random rnd = new Random();
             int num = rnd.Next(1, 10);
@@ -88,9 +90,44 @@ namespace hehehaha
                 else { Console.WriteLine("No luck this time."); }
             }
         }
-        private static void ex5()
+        private static void Ex5()
         {
-            //попросите пользователя ввести 4 числа и сделайте из него наиболее возможное число без встроенной сортировки
+            
+            int[,] table = new int[10, 10];
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    table[i, j] = j+1;
+                }
+            }
+            for (int i = 0; i < table.GetLength(0); i++)
+            {
+                for (int j = 0; j < table.GetLength(1); j++)
+                {
+                    Console.Write($"{table[i, j] * (i+1)} ");
+                }
+                Console.WriteLine();
+            }
+        }
+        private static void OwnEx()
+        {
+            int arv;
+            int[] arvud = new int[4];
+            Random rnd = new Random();
+            for (int i = 0; i < 4; i++)
+            {
+                arv = rnd.Next(1, 9);
+                arvud[i] = arv;
+            }
+            Array.Sort(arvud);
+            Array.Reverse(arvud);
+            double arv4 = 0;
+            for (int i = 0; i < arvud.Length; i++)
+            {
+                arv4 = arvud[i] * (Math.Pow(10, Math.Abs(i-arvud.Length)-1)) + arv4;
+            }
+            Console.WriteLine($"{arv4}");
         }
     }
 }
